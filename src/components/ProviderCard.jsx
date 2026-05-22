@@ -32,9 +32,7 @@ function ProviderCard({ provider }) {
         📍 {provider.mohalla}, {provider.city}
       </div>
 
-      <div className="provider-contact">
-        📞 {provider.phone}
-      </div>
+      {/* Number hidden */}
 
       <div className="button-group">
 
@@ -42,7 +40,7 @@ function ProviderCard({ provider }) {
           href={`tel:${provider.phone}`}
           className="call-btn"
         >
-          📞 Call
+          📞 Call Now
         </a>
 
         <a

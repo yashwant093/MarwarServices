@@ -14,7 +14,7 @@
 
   justify-content: center;
 
-  align-items: start;
+  align-items: stretch;
 }
 
 /* =========================
@@ -25,6 +25,14 @@
   position: relative;
 
   width: 100%;
+
+  min-height: 230px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
 
   background: #ffffff;
 
@@ -94,7 +102,7 @@
 
   justify-content: space-between;
 
-  align-items: center;
+  align-items: flex-start;
 
   gap: 14px;
 }
@@ -106,7 +114,7 @@
 .provider-info {
   display: flex;
 
-  align-items: center;
+  align-items: flex-start;
 
   gap: 12px;
 
@@ -149,6 +157,8 @@
 
 .provider-details {
   min-width: 0;
+
+  flex: 1;
 }
 
 .provider-top h3 {
@@ -158,11 +168,20 @@
 
   color: #0f172a;
 
-  margin: 0 0 6px;
+  margin: 0 0 2px;
 
-  line-height: 1.3;
+  line-height: 1.2;
+
+  overflow: hidden;
+
+  display: -webkit-box;
+
+  -webkit-box-orient: vertical;
+
+  -webkit-line-clamp: 2;
+
+  line-clamp: 2;
 }
-
 /* =========================
    CATEGORY
 ========================= */
@@ -214,12 +233,13 @@
 }
 
 /* =========================
-   LOCATION + CONTACT
+   LOCATION
 ========================= */
 
-.provider-location,
-.provider-contact {
-  margin-top: 10px;
+.provider-location {
+  margin-top: 12px;
+
+  min-height: 40px;
 
   font-size: 13px;
 
@@ -243,7 +263,9 @@
 
   gap: 10px;
 
-  margin-top: 16px;
+  margin-top: auto;
+
+  padding-top: 16px;
 }
 
 /* =========================
@@ -319,6 +341,8 @@
 
   .provider-card {
     padding: 16px;
+
+    min-height: 220px;
   }
 
   .provider-top h3 {
@@ -342,6 +366,8 @@
     border-radius: 16px;
 
     padding: 14px;
+
+    min-height: 210px;
   }
 
   .provider-avatar {
@@ -355,6 +381,8 @@
 
   .provider-top h3 {
     font-size: 14px;
+
+    min-height: 40px;
   }
 
   .category {
@@ -371,8 +399,7 @@
     font-size: 11px;
   }
 
-  .provider-location,
-  .provider-contact {
+  .provider-location {
     font-size: 12px;
   }
 
