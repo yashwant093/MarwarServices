@@ -1,0 +1,237 @@
+/* =========================
+   HEADER BASE
+========================= */
+.header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid #edf2f7;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
+}
+
+.header-content {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+/* =========================
+   LOGO & TAGLINE
+========================= */
+.logo-box {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.logo-box h1 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #4f46e5; /* Modern Royal Indigo color */
+  line-height: 1.1;
+}
+
+.logo-box p {
+  font-size: 12px;
+  color: #64748b;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* =========================
+   NAVIGATION & LINKS
+========================= */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-grow: 1;
+  justify-content: flex-end;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #475569;
+  font-size: 15px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+  padding: 8px 4px;
+  position: relative;
+}
+
+.nav-links a:hover, 
+.nav-links a.active {
+  color: #4f46e5;
+}
+
+/* Active Nav Border Effect */
+.nav-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 4px;
+  right: 4px;
+  height: 2px;
+  background-color: #4f46e5;
+  border-radius: 2px;
+}
+
+/* =========================
+   CITY DROPDOWN
+========================= */
+.dropdown-wrapper {
+  position: relative;
+}
+
+.city-select {
+  min-width: 160px;
+  height: 40px;
+  padding: 0 36px 0 12px;
+  border-radius: 10px;
+  border: 1px solid #dbe4f0;
+  background: #ffffff;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  appearance: none;
+  transition: all 0.2s ease;
+  
+  /* Custom Arrow icon */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%2364748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 12px) center;
+  background-size: 16px;
+}
+
+.city-select:hover {
+  border-color: #cbd5e1;
+  background-color: #f8fafc;
+}
+
+.city-select:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+
+/* =========================
+   HAMBURGER (MOBILE TOGGLE)
+========================= */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  width: 100%;
+  height: 2px;
+  background-color: #0f172a;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Hamburger Animations when open */
+.menu-toggle.open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+.menu-toggle.open span:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle.open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+/* =========================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+========================= */
+@media (max-width: 992px) {
+  .menu-toggle {
+    display: flex; /* Mobile me menu button dikhega */
+  }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%; /* Shuru me menu screen se bahar rahega */
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    box-shadow: -4px 0 20px rgba(15, 23, 42, 0.1);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 80px 24px 40px;
+    gap: 30px;
+    transition: right 0.3s ease-in-out;
+  }
+
+  .nav-menu.active {
+    right: 0; /* Click karne par menu slide-in hoga */
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .nav-links a {
+    display: block;
+    font-size: 18px;
+    padding: 10px 0;
+    width: 100%;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .nav-links a.active::after {
+    display: none; /* Mobile me outline line ki zaroorat nahi */
+  }
+
+  .dropdown-wrapper, 
+  .city-select {
+    width: 100%;
+  }
+  
+  .city-select {
+    height: 46px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo-box h1 {
+    font-size: 20px;
+  }
+  .logo-box p {
+    font-size: 11px;
+  }
+  .header-content {
+    padding: 12px 16px;
+  }
+}

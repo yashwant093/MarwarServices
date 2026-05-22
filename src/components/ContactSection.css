@@ -1,0 +1,118 @@
+.contact-section {
+  padding: 70px 20px;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-container {
+  width: 100%;
+  max-width: 900px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* TAG */
+.tag {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #eef2ff;
+  color: #4f46e5;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* TITLE */
+.contact-left h2 {
+  font-size: 40px;
+  color: #0f172a;
+  margin-bottom: 10px;
+}
+
+/* SUB TEXT */
+.contact-subtext {
+  max-width: 500px;
+  margin: 0 auto 10px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* ₹100 NOTE */
+.contact-note {
+  max-width: 550px;
+  margin: 0 auto 25px;
+  color: #4f46e5;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* INFO BOX */
+.info {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.info p {
+  background: #f8fafc;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid #eef2f7;
+  color: #0f172a;
+  font-weight: 500;
+}
+
+/* FORM */
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+
+  background: #f8fafc;
+  padding: 28px;
+  border-radius: 22px;
+  border: 1px solid #eef2f7;
+
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px 16px;
+
+  border-radius: 12px;
+  border: 1px solid #dbe4f0;
+
+  font-size: 14px;
+  outline: none;
+}
+
+.contact-form button {
+  height: 48px;
+  border: none;
+  border-radius: 12px;
+
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .contact-left h2 {
+    font-size: 28px;
+  }
+}
