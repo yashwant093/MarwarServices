@@ -1,7 +1,5 @@
 import { useState } from 'react';
 import './Header.css';
-// Sahi path se logo import kiya hai
-import logo from '../assets/marwar_logo_4.png'; 
 
 function Header({ city, setCity }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,14 +10,11 @@ function Header({ city, setCity }) {
     <header className="header">
       <div className="header-content">
 
-        {/* LOGO IMAGE SETTING */}
+        {/* WAPAS TEXT LOGO & TAGLINE SET KAR DIYA HAI */}
         <div className="logo-box">
           <a href="#home" onClick={closeMenu} className="logo-link">
-            <img 
-              src={logo} 
-              alt="Marwar Services" 
-              className="header-logo-img" 
-            />
+            <h1>Marwar Services</h1>
+            <p>Trusted local experts for your daily needs</p>
           </a>
         </div>
 
@@ -48,7 +43,7 @@ function Header({ city, setCity }) {
             </li>
           </ul>
 
-          {/* DROPDOWN (FIXED DESIGN) */}
+          {/* DROPDOWN */}
           <div className="dropdown-wrapper">
             <select
               className="city-select"
